@@ -2,14 +2,13 @@ import { useState } from "react";
 
 export function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [cName, setCName] = useState("");
+  const [cName, setCName] = useState("normalText");
   function changeCName() {
-    console.log("how are you");
-    setIsOpen(false);
+    setCName("blurryText");
   }
   return (
     <div>
-      <div className="cName">
+      <div className={cName}>
         <p className="para">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque facere
           laborum veniam beatae earum facilis libero unde animi similique ut
@@ -27,7 +26,13 @@ export function App() {
           reiciendis aliquam.
         </p>
       </div>
-      <button className="openButton" onClick={() => setIsOpen(!isOpen)}>
+      <button
+        className="openButton"
+        onClick={() => {
+          setIsOpen(!isOpen);
+          changeCName();
+        }}
+      >
         Click Me
       </button>
       {isOpen && (
@@ -36,6 +41,7 @@ export function App() {
             className="helloClick"
             onClick={() => {
               setIsOpen(false);
+              setCName("normalText");
             }}
           ></div>
           <div className="modalBox">
@@ -45,8 +51,7 @@ export function App() {
                 className="closeButton"
                 onClick={() => {
                   setIsOpen(!isOpen);
-
-                  setCName("helloClick");
+                  setCName("normalText");
                 }}
               >
                 &#10005;

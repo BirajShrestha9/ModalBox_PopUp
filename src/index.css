@@ -1,0 +1,54 @@
+* {
+  margin: 0rem;
+  padding: 0rem;
+}
+
+.modalBox {
+  background-color: rgb(255, 248, 248);
+  box-shadow: 0px 1px 10px grey;
+  z-index: 19;
+  position: relative;
+  border-radius: 5px;
+  margin: auto;
+
+  width: 60%;
+  /* width: 50rem; */
+  height: auto;
+  padding: 2rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.openButton {
+  position: absolute;
+  padding: 16px;
+  top: 40%;
+  right: 50%;
+  z-index: -1;
+  cursor: pointer;
+}
+.closeButton {
+  font-size: 2rem;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+.canclebtn {
+  padding: 16px;
+}
+.header,
+.para {
+  margin-bottom: 2rem;
+}
+
+.helloClick {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  background-color: rgb(0, 0, 0);
+  backdrop-filter: blur(100px);
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+}
